@@ -1,4 +1,4 @@
-🎵 **Music Suno App – Web Application Description**  
+🎵 **Play Songs App – Web Application Description**  
 This music web application, titled **Music Suno App**, is a React-based project designed to offer a smooth and engaging music streaming experience. Here's a breakdown of its core features and setup:
 
 ### ⚙️ Tech Stack & Setup
