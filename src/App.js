@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+ import HomeScreen from './components/HomeScreen';
+ import PlayerScreen from './components/PlayerScreen';
+import BottomPlayer from './components/BottomPlayer';
+import { SongProvider } from './context/SongContext';
+import './index.css'; // Import the styles
 
 function App() {
+ const [screen, setScreen] = useState('Home');
+  const navigate = (targetScreen) => setScreen(targetScreen);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <SongProvider>
+      <div className="appContainer">
+        {screen === 'Home' && <HomeScreen navigate={navigate} />}
+        {screen === 'Player' && <PlayerScreen navigate={navigate} />}
+        <BottomPlayer navigate={navigate} />
+      </div>
+    </SongProvider>
   );
 }
 
